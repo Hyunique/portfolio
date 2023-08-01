@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro&family=Rajdhani&family=Titillium+Web:ital,wght@0,400;0,600;0,900;1,400&display=swap");
+
+:root {
+  --color-primary: white;
+  --font-primary: "Titillium Web", sans-serif; /*400, 400i, 600, 900*/
+  --font-secondary: "Rajdhani", sans-serif; /*400*/
+  --font-logo1: "DM Sans", sans-serif; /*300*/
+  --font-logo3: "Maven Pro", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+.bodyContainer {
+  width: 1600px;
+  min-width: 320px;
+}
+
+/*---------------- Nav --------------*/
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navContainer {
+  width: 540px;
+  display: flex;
+  justify-content: space-around;
+}
+.logo {
+  background-color: black;
+  color: white;
+  font-family: var(--font-logo3);
+  font-size: 40px;
+  line-height: 19px;
+  padding: 0;
+}
+
+nav a {
+  font-family: var(--font-secondary);
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+
+/*---------------- Header --------------*/
+header {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header h1 {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 80px;
+  margin: 0;
+}
+
+/*----------------Main Section Projects--------------*/
+.project {
+  height: 500px;
+  border-bottom: solid 1px black;
+}
+
+/*----------------Main Section Contact--------------*/
+.contact {
+  display: flex;
+  max-width: 1400px;
+  justify-content: space-evenly;
+  padding: 100px;
+}
+.contact h2 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  width: 400px;
+}
+form {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  font-family: var(--font-primary);
+}
+
+form input {
+  height: 30px;
+}
+
+.message {
+  height: 100px;
+}
+
+/*---------------------Footer--------------------*/
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--font-secondary);
+  font-size: 20px;
+}
