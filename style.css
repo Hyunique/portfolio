@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro&family=Rajdhani&family=Titillium+Web:ital,wght@0,400;0,600;0,900;1,400&display=swap");
 
 :root {
-  --color-primary: white;
+  --color-primary: #31365a;
+  --color-secondary: #5e6283;
+  --color-point: #80edb9;
   --font-primary: "Titillium Web", sans-serif; /*400, 400i, 600, 900*/
   --font-secondary: "Rajdhani", sans-serif; /*400*/
   --font-logo1: "DM Sans", sans-serif; /*300*/
@@ -28,21 +30,18 @@ nav {
   display: flex;
   justify-content: space-around;
 }
-.logo {
-  background-color: black;
-  color: white;
-  font-family: var(--font-logo3);
-  font-size: 40px;
-  line-height: 19px;
-  padding: 0;
+
+.navItem {
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 10px;
 }
 
-nav a {
-  font-family: var(--font-secondary);
-  font-size: 30px;
-  text-decoration: none;
-  color: black;
-  padding: 10px;
+.navItem:hover {
+  text-decoration: line-through wavy var(--color-point) 4px;
 }
 
 /*---------------- Header --------------*/
@@ -54,9 +53,17 @@ header {
 }
 header h1 {
   font-family: var(--font-primary);
-  font-weight: 400;
-  font-size: 80px;
+  font-weight: 600;
+  font-size: 5rem;
+  color: var(--color-primary);
   margin: 0;
+}
+.header1 {
+  font-size: 2.5rem;
+  color: var(--color-secondary);
+}
+.header2.color {
+  color: var(--color-point);
 }
 
 /*----------------Main Section Projects--------------*/
