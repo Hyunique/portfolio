@@ -13,76 +13,95 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
         <title>Elena Yi | Frontend developer</title>
     </head>
 
     <body>
         <div class="bodyContainer">
-            <nav>
-                <a href="">
-                    <img src="img/logo.svg" alt="logo">
-                </a>
-                <div class="navContainer">
-                    <a class="navItem" href="">Home</a>
-                    <a class="navItem" href="">About</a>
-                    <a class="navItem" href="">Portfolio</a>
-                    <a class="navItem" href="">Contact</a>
-                </div>
-            </nav>
-
-
-
             <header>
-                <h1 class="header1">{ Hello there! }</h1>
-                <h1 class="header2">I am <span class="header2 color">Elena Yi</span>,</h1>
-                <h1 class="header2">a Frontend Web Developer</h1>
-                <h1 class="header2">based in the Netherlands</h1>
+                <nav>
+                    <a href="/" class="logo">
+                        <img src="img/logo.svg" alt="logo">
+                    </a>
+                    <div class="navContainer">
+                        <ul>
+                            <li class="navItem"><a href="http://">Home</a></li>
+                            <li class="navItem"><a href="http://">About</a></li>
+                            <li class="navItem"><a href="http://">Portfolio</a></li>
+                            <li class="navItem"><a href="http://">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="sideBar left">
+                    <div class="verticalLine left"></div>
+                    <span class="material-symbols-outlined">dark_mode</span>
+                    <span class="dutch">NL</span>
+                    <!-- <span class="material-symbols-outlined">brightness_5</span> -->
+                    <!-- <span class="dutch">EN</span> -->
+                </div>
+                <div class="sideBar right">
+                    <div class="verticalLine right"></div>
+                    <div class="social">
+                        <i class="devicon-linkedin-plain"></i>
+                        <i class="devicon-github-original"></i>
+                    </div>
+
+                </div>
 
             </header>
 
 
+            <div class="content">
 
-            <main>
-                <section class="projects">
-                    <div class="project 1"></div>
-                    <div class="project 2"></div>
-                    <div class="project 3"></div>
-                </section>
-                <section class="contact">
-                    <h2>Feel free to send me a message<br>
-                        and I will get back to you!</h2>
+                <main>
+                    <section class="landing">
+                        <h1 class="header1">{ Hello there! }</h1>
+                        <h1 class="header2">I am <span class="header2 color">Elena Yi</span>,</h1>
+                        <h1 class="header2">a Frontend Web Developer</h1>
+                        <h1 class="header2">based in the Netherlands</h1>
+                        <div class="arrow"></div>
+                    </section>
+                    <section class="projects">
+                        <div class="project 1"></div>
+                        <div class="project 2"></div>
+                        <div class="project 3"></div>
+                    </section>
 
-                    <form action="">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="">
-                        <label for="message">Message</label>
-                        <input type="text" class="message" name="message" id="">
-                    </form>
-                </section>
+                    <section class="about">
 
-            </main>
+                    </section>
+                    <section class="contact">
+                        <h2>Feel free to send me a message<br>
+                            and I will get back to you!</h2>
+
+                        <form action="">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="">
+                            <label for="message">Message</label>
+                            <input type="text" class="message" name="message" id="">
+                        </form>
+                    </section>
+
+                </main>
 
 
 
-            <footer>
-                <div class="copyright">
-                    Elena Yi<br>
-                    the Netherlands<br>
-                    Ⓒ 2023
-                </div>
-                <div class="builtWith">
-                    <i class="devicon-html5-plain-wordmark"></i>
-                    <i class="devicon-css3-plain"></i>
-                    <i class="devicon-javascript-plain"></i>
-                </div>
-                <div class="social">
-                    <i class="devicon-linkedin-plain"></i>
-                    <i class="devicon-github-original"></i>
-                </div>
-
-            </footer>
+                <footer>
+                    <div class="copyright">
+                        Elena Yi<br>
+                        the Netherlands<br>
+                        Ⓒ 2023
+                    </div>
+                    <div class="builtWith">
+                        Designed in Figma and coded in Visual Studio Code by Elena Yi. Built with vanilaJS and Tailwind
+                        CSS, deployed with Vercel.
+                    </div>
+                </footer>
+            </div>
         </div>
         <script src="app.js"></script>
     </body>
