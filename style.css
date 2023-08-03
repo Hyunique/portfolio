@@ -42,6 +42,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 70px;
+  background-color: rgba(255, 255, 255, 0.733);
+  z-index: -2;
 }
 .navContainer ul {
   list-style: none;
@@ -80,7 +82,34 @@ nav {
   display: block;
   text-decoration: none;
   color: var(--color-primary);
+  font-family: var(--font-secondary);
   font-size: var(--fz-s);
+  font-weight: 400;
+}
+
+.sideBar.left,
+.sideBar.right {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+
+  right: auto;
+  z-index: 10;
+  color: var(--light-slate);
+}
+.sideBar.left {
+  left: 40px;
+}
+.sideBar.right {
+  right: 40px;
+}
+.vLine {
+  border-left: 1px solid var(--color-primary);
+  height: 200px;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  /* margin-left: -3px; */
 }
 
 /*---------------- Main Section Landing --------------*/
@@ -95,9 +124,8 @@ main {
 }
 .landing {
   width: 100%;
-
-  /* height: 100%; */
-  max-height: 1200px;
+  height: 100vh;
+  max-height: 1100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,7 +133,7 @@ main {
 .landing h1 {
   font-family: var(--font-primary);
   font-weight: 600;
-  margin: 0;
+  margin: 0 60px;
 }
 .header1 {
   font-size: var(--fz-l);
@@ -115,6 +143,21 @@ main {
   font-size: var(--fz-xl);
   padding-left: 60px;
   color: var(--color-primary);
+}
+
+.header2.bgr {
+  background: rgb(180, 233, 207);
+  background: linear-gradient(
+    156deg,
+    rgba(180, 233, 207, 1) 33%,
+    rgba(134, 138, 170, 1) 97%
+  );
+  height: 42px;
+  width: 580px;
+  position: relative;
+  z-index: -1;
+  left: 150px;
+  top: -42px;
 }
 .header2.color {
   color: var(--color-point);
