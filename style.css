@@ -86,13 +86,22 @@ nav {
   font-size: var(--fz-s);
   font-weight: 400;
 }
+.settings {
+  display: flex;
+}
+.settings span {
+  padding: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+.settings span:hover {
+  color: var(--color-point);
+}
 
-.sideBar.left,
+/* .sideBar.left,
 .sideBar.right {
   width: 40px;
   position: fixed;
-  bottom: 0px;
-
+  bottom: 50%;
   right: auto;
   z-index: 10;
   color: var(--light-slate);
@@ -109,8 +118,7 @@ nav {
   position: sticky;
   left: 0;
   bottom: 0;
-  /* margin-left: -3px; */
-}
+} */
 
 /*---------------- Main Section Landing --------------*/
 main {
