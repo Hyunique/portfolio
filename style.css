@@ -24,6 +24,10 @@ body {
   font-family: var(--font-primary);
   cursor: none;
 }
+::selection {
+  color: var(--color-point);
+  background-color: var(--color-primary);
+}
 #cursor {
   background-color: var(--color-primary);
   position: absolute;
@@ -149,14 +153,12 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 80px;
 }
 .landing {
-  width: 100%;
-  height: 100vh;
+  height: 90vh;
   max-height: 1100px;
   display: flex;
   flex-direction: column;
@@ -177,7 +179,38 @@ main {
   color: var(--color-primary);
 }
 
-.header2.bgr {
+.arrow {
+  width: 8px;
+  height: 48px;
+  background-color: var(--color-point);
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+
+  animation-name: arrow;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+@keyframes arrow {
+  0% {
+    bottom: 0;
+  }
+  75% {
+    bottom: 90px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+.header2.color {
+  color: var(--color-point);
+  padding: 0;
+}
+/* .header2.bgr {
   background: rgb(180, 233, 207);
   background: linear-gradient(
     156deg,
@@ -190,17 +223,63 @@ main {
   z-index: -1;
   left: 150px;
   top: -42px;
-}
-.header2.color {
-  color: var(--color-point);
-  padding: 0;
-}
+} */
 
 /*----------------Main Section Projects--------------*/
 .project {
-  height: 500px;
-  background-color: var(--color-secondary);
+  height: 700px;
+  font-family: var(--font-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-bottom: solid 1px black;
+}
+
+.project:nth-child(1) {
+  border-top: solid 1px black;
+}
+
+.project-title {
+  font-family: var(--font-secondary);
+  font-size: var(--fz-m);
+  /* line-height: var(--fz-xs); */
+}
+
+.title {
+  margin: 0;
+}
+.subtitle {
+  color: var(--color-secondary);
+  font-size: var(--fz-m);
+  margin: 0;
+}
+
+.pj-info-container {
+  display: flex;
+}
+
+.project-img {
+  max-width: 800px;
+  max-height: 540px;
+  object-fit: cover;
+  margin-top: 30px;
+}
+
+.sum-container {
+  max-width: 640px;
+  padding: 0 40px;
+}
+.summary {
+  font-family: var(--font-primary);
+}
+.pjt-link {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+}
+.pjt-link li {
+  padding-right: 30px;
 }
 
 /*----------------Main Section Contact--------------*/
