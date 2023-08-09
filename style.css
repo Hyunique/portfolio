@@ -159,8 +159,8 @@ main {
   padding: 0 80px;
 }
 .landing {
-  height: 90vh;
-  max-height: 1100px;
+  height: 100vh;
+  /* max-height: 1100px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,13 +198,13 @@ main {
 
 @keyframes arrow {
   0% {
-    top: 15%;
+    top: 18%;
   }
   25% {
-    top: 30%;
+    top: 24%;
   }
   100% {
-    top: 15%;
+    top: 18%;
   }
 }
 .header2.color {
@@ -227,16 +227,21 @@ main {
 } */
 
 /*----------------Main Section Projects--------------*/
+.projects-header {
+  font-size: var(--fz-xl);
+  font-weight: 600;
+}
+
 .project {
   height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-bottom: solid 1px black;
+  border-bottom: dotted 1px black;
 }
 
-.project:nth-child(1) {
-  border-top: solid 1px black;
+.project:nth-child(2) {
+  border-top: dotted 1px black;
 }
 
 .project-title {
@@ -303,12 +308,16 @@ main {
 }
 .about-heading {
   font-weight: 600;
-  font-size: var(--fz-l);
+  font-size: var(--fz-xl);
+  line-height: var(--fz-xl);
+  margin: 0;
 }
 .about-text {
+  padding-right: 60px;
   font-size: var(--fz-m);
 }
 .techStack {
+  font-size: var(--fz-l);
   font-weight: 600;
 }
 .techStack-container {
@@ -354,37 +363,99 @@ main {
   right: 0;
 }
 .profile {
-  padding: 50px;
   max-width: 500px;
   max-height: 800px;
   object-fit: cover;
 }
 
 /*----------------Main Section Contact--------------*/
-.contact {
+.contact-container {
   display: flex;
+  height: 800px;
   max-width: 1400px;
-  justify-content: space-evenly;
   padding: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/img/bg.png);
+  background-size: cover;
 }
-.contact h2 {
-  font-family: var(--font-primary);
+.contact-heading {
   font-weight: 600;
+  font-size: var(--fz-xl);
+  line-height: var(--fz-xl);
+  margin: 0;
+}
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 400px;
+  padding: 60px;
+  background-color: var(--color-bg);
+  border-radius: 30px;
+}
+.contact-content p {
+  font-weight: 600;
+  text-align: center;
+  width: 400px;
+  margin: 50px;
+}
+.social i {
+  color: var(--color-primary);
+  font-size: var(--fz-m);
+  padding: 6px;
+  transition: color 0.3s ease-in;
+}
+.social i:hover {
+  cursor: pointer;
+  color: var(--color-point);
 }
 form {
-  display: flex;
-  width: 400px;
-  flex-direction: column;
   font-family: var(--font-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  margin-top: 50px;
 }
 
-form input {
-  height: 30px;
+form input,
+.message {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid var(--color-primary);
+  -webkit-transition: 0.5s;
+  transition: 0.3s;
+  outline: none;
+}
+form input:focus,
+.message:focus {
+  border: 1px solid var(--color-point);
 }
 
 .message {
   height: 100px;
+  overflow: auto;
+  resize: none;
+}
+.form-btn {
+  width: 100px;
+  height: 40px;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: var(--fz-s);
+  line-height: var(--fz-s);
+  color: var(--color-bg);
+  background-color: var(--color-secondary);
+  border-style: none;
+  border-radius: 10px;
+  float: right;
+}
+.form-btn:hover {
+  background-color: var(--color-point);
 }
 
 /*---------------------Footer--------------------*/
