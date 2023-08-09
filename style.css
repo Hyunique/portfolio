@@ -15,7 +15,7 @@
 }
 
 body {
-  margin: 0px;
+  margin: 0;
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
@@ -184,9 +184,9 @@ main {
   width: 8px;
   height: 48px;
   background-color: var(--color-point);
-  position: absolute;
-  bottom: 10%;
+  position: relative;
   left: 50%;
+  bottom: 0;
 
   animation-name: arrow;
   animation-duration: 1.5s;
@@ -198,13 +198,13 @@ main {
 
 @keyframes arrow {
   0% {
-    bottom: 0;
+    top: 15%;
   }
-  75% {
-    bottom: 90px;
+  25% {
+    top: 30%;
   }
   100% {
-    bottom: 0;
+    top: 15%;
   }
 }
 .header2.color {
@@ -306,10 +306,55 @@ main {
   font-size: var(--fz-l);
 }
 .about-text {
-  padding: 50px;
   font-size: var(--fz-m);
 }
+.techStack {
+  font-weight: 600;
+}
+.techStack-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+  overflow: hidden;
+  width: 90%;
+}
+.skills {
+  display: flex;
+}
+
+.skill {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skill i {
+  font-size: 100px;
+}
+
+.carousel-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  color: var(--color-point);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  border: 1px solid var(--color-point);
+  cursor: pointer;
+  /* padding: 20px; */
+}
+.carousel-btn.prev {
+  left: 0;
+}
+.carousel-btn.next {
+  right: 0;
+}
 .profile {
+  padding: 50px;
   max-width: 500px;
   max-height: 800px;
   object-fit: cover;
