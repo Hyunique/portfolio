@@ -84,6 +84,9 @@ nav {
   padding: 0 20px;
   text-align: center;
 }
+.navItem-icon {
+  display: none;
+}
 
 .navItem a::after {
   content: "";
@@ -114,40 +117,17 @@ nav {
   font-size: var(--fz-s);
   font-weight: 400;
 }
-.settings {
+.navItem-settings {
   display: flex;
 }
-.settings span {
+.navItem-settings span {
   padding: 0 10px;
   transition: color 0.3s ease-in-out;
 }
-.settings span:hover {
+.navItem-settings span:hover {
   color: var(--color-point);
   cursor: pointer;
 }
-
-/* .sideBar.left,
-.sideBar.right {
-  width: 40px;
-  position: fixed;
-  bottom: 50%;
-  right: auto;
-  z-index: 10;
-  color: var(--light-slate);
-}
-.sideBar.left {
-  left: 40px;
-}
-.sideBar.right {
-  right: 40px;
-}
-.vLine {
-  border-left: 1px solid var(--color-primary);
-  height: 200px;
-  position: sticky;
-  left: 0;
-  bottom: 0;
-} */
 
 /*---------------- Main Section Landing --------------*/
 main {
@@ -160,7 +140,6 @@ main {
 }
 .landing {
   height: 100vh;
-  /* max-height: 1100px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -272,15 +251,26 @@ main {
 }
 
 .sum-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 640px;
   padding: 0 40px;
   font-size: var(--fz-m);
 }
+.sum-container p {
+  margin-top: 0;
+}
+.sum-container h2 {
+  margin-bottom: 0;
+}
 .summary {
+  font-size: var(--fz-l);
   font-weight: 600;
 }
 
 .technology {
+  font-size: var(--fz-m);
   font-weight: 600;
 }
 .pjt-link {
@@ -462,6 +452,7 @@ form input:focus,
 footer {
   display: flex;
   height: 200px;
+  /* max-width: 1440px; */
   justify-content: space-around;
   align-items: center;
   font-family: var(--font-secondary);
@@ -473,4 +464,34 @@ footer {
 .builtWith {
   text-align: center;
   font-size: var(--fz-xs);
+}
+
+@media (max-width: 1000px) {
+  .landing h1 {
+    margin: 0;
+  }
+  .header1 {
+    font-size: var(--fz-m);
+  }
+  .header2 {
+    font-size: var(--fz-l);
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 580px) {
+  .navItem {
+    display: none;
+  }
+  .navItem-icon {
+    display: flex;
+  }
+
+  .header1 {
+    font-size: var(--fz-s);
+  }
+  .header2 {
+    font-size: var(--fz-m);
+    padding-left: 20px;
+  }
 }
