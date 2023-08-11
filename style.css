@@ -270,10 +270,10 @@ main {
   /* padding: 20px; */
 }
 .carousel-btn.prev {
-  left: 0;
+  left: -10px;
 }
 .carousel-btn.next {
-  right: 0;
+  right: -10px;
 }
 .profile {
   width: clamp(300px, 34vw, 500px);
@@ -464,14 +464,14 @@ footer {
   justify-content: space-around;
   align-items: center;
   font-family: var(--font-secondary);
-  font-size: var(--fz-s);
+  font-size: var(--fz-p);
 }
 .copyright {
   font-weight: 600;
 }
 .builtWith {
   text-align: center;
-  font-size: var(--fz-xs);
+  /* font-size: var(--fz-p); */
 }
 
 /*---------------------Screen break points--------------------*/
@@ -556,7 +556,14 @@ footer {
     width: 300px;
     padding: 20px;
   }
-  /* .contact-content p {
-    margin: 20px 0;
-  } */
+  footer {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    font-size: 14px;
+  }
+  footer > * {
+    padding: 20px;
+  }
 }
