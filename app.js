@@ -24,3 +24,23 @@ function toggleThemeBtn() {
     themeBtn.innerHTML = "dark_mode";
   }
 }
+
+const scrollTo = document.querySelector(".arrow");
+const aboutSection = document.querySelector(".about");
+const portfolioSection = document.querySelector(".projects-container");
+const contactSection = document.querySelector(".contact-container");
+const aboutcoords = aboutSection.getBoundingClientRect();
+const portfoliocoords = portfolioSection.getBoundingClientRect();
+const contactcoords = contactSection.getBoundingClientRect();
+
+scrollTo.addEventListener("click", () => {
+  aboutSection.scrollIntoView({ behavior: "smooth" });
+});
+// console.log(aboutcoords);
+// console.log(e.target.getBoundingClientRect());
+// console.log(window.pageYOffset);
+// window.scrollTo({
+//   left: aboutcoords.left,
+//   top: aboutcoords.top + window.pageYOffset,
+//   behavior: "smooth",
+// });
