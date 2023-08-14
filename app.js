@@ -9,3 +9,18 @@ document.addEventListener("mousemove", function (event) {
   cursor2.style.left = x + 5 + "px";
   cursor2.style.top = y + 5 + "px";
 });
+
+const body = document.querySelector("body");
+const themeBtn = document.querySelector(".theme-btn");
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("darkmode");
+  toggleThemeBtn();
+});
+
+function toggleThemeBtn() {
+  if (themeBtn.innerHTML === "dark_mode") {
+    themeBtn.innerHTML = "flare";
+  } else {
+    themeBtn.innerHTML = "dark_mode";
+  }
+}
