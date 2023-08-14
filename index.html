@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- semantic html, a11y -->
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,16 +23,16 @@
         <div id="cursor2"></div>
         <div class="bodyContainer">
             <header>
-                <nav>
+                <nav class="nav">
                     <a href="/">
                         <img class="logo" src="img/logo.svg" alt="logo">
                     </a>
                     <div class="navContainer">
-                        <ul>
-                            <li class="navItem"><a href="http://">Home</a></li>
-                            <li class="navItem"><a href="http://">About</a></li>
-                            <li class="navItem"><a href="http://">Portfolio</a></li>
-                            <li class="navItem"><a href="http://">Contact</a></li>
+                        <ul class="navList">
+                            <li class="navItem">Home</li>
+                            <li class="navItem">About</li>
+                            <li class="navItem">Portfolio</li>
+                            <li class="navItem">Contact</li>
 
                             <div class="navItem-settings">
                                 <span class="theme-btn material-symbols-outlined">dark_mode</span>
@@ -62,9 +60,8 @@
 
 
                     <section class="about">
+                        <h1 class="about-heading">About Me</h1>
                         <div class="about-container">
-                            <h1 class="about-heading heading">About Me</h1>
-
                             <div class="about-text">
                                 <p class="aboutMe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
                                     autem vel? Rerum quibusdam nobis accusantium voluptatibus, facilis aliquid, pariatur
@@ -153,7 +150,7 @@
                     </section>
 
                     <section class="projects-container">
-                        <h1 class="projects-header heading">Projects</h1>
+                        <h1 class="projects-header">Projects</h1>
                         <div class="project 1">
                             <div class="project-title">
                                 <h1 class="title">The Odin Project</h1>
@@ -266,7 +263,7 @@
                     <div class="builtWith">
                         Designed in Figma and coded in VS Code by Elena Yi.<br>
                         Built with pure Html, Css and JS.<br>
-                        Deployed with Vercel.
+                        Deployed with Netlify.
                     </div>
                     <div class="social">
                         <i class="devicon-linkedin-plain"></i>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro&family=Rajdhani&family=Titillium+Web:ital,wght@0,400;0,600;0,900;1,400&display=swap");
 
 :root {
-  --color-primary: #31365a;
+  --color-primary: #354059;
   --color-secondary: #5e6283;
   --color-point: #80edb9;
   --color-bg: white;
@@ -14,7 +14,7 @@
 }
 .darkmode {
   --color-primary: white;
-  --color-bg: #31365a;
+  --color-bg: #2c354c;
 }
 body {
   margin: 0;
@@ -64,16 +64,17 @@ header {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  position: sticky;
+  position: fixed;
   top: 0;
+  transition: top 0.3s;
 }
 nav {
   max-width: 1440px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
-  background-color: inherit;
+  background-color: var(--color-bg);
   z-index: -2;
 }
 .navContainer ul {
@@ -92,7 +93,7 @@ nav {
   cursor: pointer;
 }
 
-.navItem a::after {
+.navItem::after {
   content: "";
   position: relative;
   width: 2px;
@@ -103,7 +104,7 @@ nav {
   transition: all 0.3s ease;
   z-index: -1;
 }
-.navItem a:hover::after {
+.navItem:hover::after {
   width: 90%;
   height: 4px;
   left: -10px;
@@ -221,7 +222,7 @@ main {
 .about-heading {
   font-weight: 600;
   font-size: var(--fz-h1);
-  line-height: var(--fz-h1);
+  line-height: 1;
   margin: 20px 0;
 }
 .about-text {
@@ -289,15 +290,16 @@ main {
 }
 
 .project {
+  padding: 40px 0;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-bottom: dotted 1px black;
+  border-bottom: dotted 1px var(--color-secondary);
 }
 
 .project:nth-child(2) {
-  border-top: dotted 1px black;
+  border-top: dotted 1px var(--color-secondary);
 }
 
 .project-title {
@@ -306,6 +308,7 @@ main {
 
 .title {
   font-size: var(--fz-h2);
+  line-height: 1;
   font-weight: 600;
   margin: 0;
 }
@@ -318,15 +321,13 @@ main {
 
 .pj-info-container {
   display: flex;
-  padding: 20px 0;
+  padding-top: 20px;
 }
 
 .project-img {
   width: clamp(400px, 50vw, 800px);
-  /* max-width: 800px; */
   max-height: 540px;
   object-fit: contain;
-  margin-top: 30px;
 }
 
 .sum-container {
@@ -382,22 +383,22 @@ main {
 .contact-heading {
   font-weight: 600;
   font-size: var(--fz-h1);
-  line-height: var(--fz-h1);
+  line-height: 1;
   margin: 0;
 }
 .contact-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px;
-  background-color: inherit;
+  padding: 40px;
+  background-color: var(--color-bg);
   border-radius: 30px;
 }
 .contact-content p {
-  font-weight: 600;
-  text-align: center;
   max-width: 400px;
   margin: 30px 0;
+  text-align: center;
+  font-weight: 600;
 }
 .social i {
   color: inherit;
@@ -410,12 +411,12 @@ main {
   color: var(--color-point);
 }
 form {
-  font-family: var(--font-primary);
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-  max-width: 400px;
+  font-family: var(--font-primary);
 }
 
 form input,
@@ -445,8 +446,8 @@ form input:focus,
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: var(--fz-s);
-  line-height: var(--fz-s);
-  color: inherit;
+  line-height: 1;
+  color: white;
   background-color: var(--color-secondary);
   border-style: none;
   border-radius: 10px;
