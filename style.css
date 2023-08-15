@@ -160,14 +160,27 @@ main {
   padding-left: 30px;
   color: inherit;
 }
-
+.arrowBox {
+  display: flex;
+  justify-content: center;
+}
 .arrow {
-  width: 8px;
-  height: 48px;
-  background-color: var(--color-point);
+  box-sizing: border-box;
+  height: 40px;
+  width: 40px;
+  border-style: solid;
+  transform: rotate(45deg);
+  border-color: var(--color-point);
+  border-width: 0px 2px 2px 0px;
   position: relative;
-  left: 50%;
-  bottom: 0;
+  left: 45%;
+  top: 14%;
+  transition: border-width 150ms ease-in-out;
+}
+
+.arrow:hover {
+  border-bottom-width: 4px;
+  border-right-width: 4px;
 
   animation-name: arrow;
   animation-duration: 1.5s;
@@ -179,13 +192,13 @@ main {
 
 @keyframes arrow {
   0% {
-    top: 18%;
+    top: 14%;
   }
   25% {
-    top: 24%;
+    top: 18%;
   }
   100% {
-    top: 18%;
+    top: 14%;
   }
 }
 .header2.color {
