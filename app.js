@@ -1,13 +1,13 @@
 const cursor = document.querySelector("#cursor");
 const cursor2 = document.querySelector("#cursor2");
-document.addEventListener("mousemove", function (event) {
-  const x = event.pageX - 10;
-  const y = event.pageY - 10;
+document.addEventListener("mousemove", function (e) {
+  const x = e.pageX - 10;
+  const y = e.pageY - 10;
   cursor.style.left = x + "px";
   cursor.style.top = y + "px";
 
-  cursor2.style.left = x + 5 + "px";
-  cursor2.style.top = y + 5 + "px";
+  cursor2.style.left = x + 20 + "px";
+  cursor2.style.top = y + 20 + "px";
 });
 
 const body = document.querySelector("body");
@@ -68,3 +68,10 @@ window.onscroll = function () {
   }
   prevScrollpos = currentScrollPos;
 };
+
+// const liItems = document.querySelectorAll("li");
+// liItems.forEach((item) => {
+//   item.addEventListener("mouseover", () => {
+//     cursor.classList.add("hover");
+//   });
+// });
