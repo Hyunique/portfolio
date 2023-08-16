@@ -1,3 +1,4 @@
+// Custom cursor
 const cursor = document.querySelector("#cursor");
 const cursor2 = document.querySelector("#cursor2");
 document.addEventListener("mousemove", function (e) {
@@ -10,13 +11,13 @@ document.addEventListener("mousemove", function (e) {
   cursor2.style.top = y + 20 + "px";
 });
 
+// Theme toggle button event
 const body = document.querySelector("body");
 const themeBtn = document.querySelector(".theme-btn");
 themeBtn.addEventListener("click", () => {
   document.body.classList.toggle("darkmode");
   toggleThemeBtn();
 });
-
 function toggleThemeBtn() {
   if (themeBtn.innerHTML === "dark_mode") {
     themeBtn.innerHTML = "flare";
@@ -25,14 +26,12 @@ function toggleThemeBtn() {
   }
 }
 
+// Auto scroll
 const scrollTo = document.querySelector(".arrow");
 const homeSection = document.querySelector(".landing");
 const aboutSection = document.querySelector(".about");
 const portfolioSection = document.querySelector(".projects-container");
 const contactSection = document.querySelector(".contact-container");
-// const aboutcoords = aboutSection.getBoundingClientRect();
-// const portfoliocoords = portfolioSection.getBoundingClientRect();
-// const contactcoords = contactSection.getBoundingClientRect();
 
 scrollTo.addEventListener("click", () => {
   aboutSection.scrollIntoView({ behavior: "smooth" });
@@ -58,6 +57,7 @@ navList.addEventListener("click", (e) => {
   }
 });
 
+// Hiding nav bar on down scroll
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   let currentScrollPos = window.pageYOffset;
@@ -69,9 +69,24 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 };
 
-// const liItems = document.querySelectorAll("li");
-// liItems.forEach((item) => {
-//   item.addEventListener("mouseover", () => {
-//     cursor.classList.add("hover");
-//   });
-// });
+// Observer section revealing
+const allSections = document.querySelectorAll(".section");
+
+function revealSection(entries, Observer) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section--hidden");
+  Observer.unobserve(entry.target);
+}
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.2,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
+});
