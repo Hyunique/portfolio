@@ -57,6 +57,13 @@ navList.addEventListener("click", (e) => {
   }
 });
 
+// Hamburger dropdown
+const dropIcon = document.querySelector(".dropdown-icon");
+dropIcon.addEventListener("click", showNav);
+function showNav() {
+  navList.classList.toggle("hamburger");
+}
+
 // Hiding nav bar on down scroll
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
@@ -74,7 +81,7 @@ const allSections = document.querySelectorAll(".section");
 
 function revealSection(entries, Observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
 
   if (!entry.isIntersecting) return;
   entry.target.classList.remove("section--hidden");
@@ -90,3 +97,17 @@ allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add("section--hidden");
 });
+
+// Landing header animation
+let i = 0;
+function typeWriter() {
+  const header1 = document.querySelector(".header1");
+  const txt = "{ Hello there! }"; /* The text */
+  let speed = 70;
+  if (i < txt.length) {
+    header1.innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+window.addEventListener("load", typeWriter);
