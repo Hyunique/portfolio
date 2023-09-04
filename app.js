@@ -111,3 +111,23 @@ function typeWriter() {
   }
 }
 window.addEventListener("load", typeWriter);
+
+// email copy
+const emailBtn = document.querySelector(".emailBtn");
+const tooltip = document.querySelector(".tooltiptext");
+emailBtn.addEventListener("click", myFunction);
+emailBtn.addEventListener("mouseout", outFunc);
+function myFunction() {
+  // var copyText = document.getElementById("myInput");
+  // copyText.select();
+  // copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText("kunstvanelena@gmail.com");
+
+  tooltip.innerHTML = "Copied!";
+  console.log("Copied!");
+}
+
+function outFunc() {
+  const tooltip = document.querySelector(".tooltiptext");
+  tooltip.innerHTML = "Copy email";
+}
