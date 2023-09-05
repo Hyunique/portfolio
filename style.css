@@ -173,8 +173,9 @@ header {
 /*---------------- Main Section Landing --------------*/
 main {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 80px;
@@ -239,138 +240,70 @@ main {
   color: var(--color-point);
   padding: 0;
 }
-/* .header2.bgr {
-  background: rgb(180, 233, 207);
-  background: linear-gradient(
-    156deg,
-    rgba(180, 233, 207, 1) 33%,
-    rgba(134, 138, 170, 1) 97%
-  );
-  height: 42px;
-  width: 580px;
-  position: relative;
-  z-index: -1;
-  left: 150px;
-  top: -42px;
-} */
 
 /*----------------Main Section About--------------*/
 
-.about {
-  margin: 100px;
+.about-section {
+  max-width: 1000px;
 }
-.about-container {
+.about-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
-.about-heading {
-  font-family: var(--font-secondary);
-  font-weight: 600;
-  font-size: var(--fz-h1);
+.aboutme.title {
+  font-size: var(--fz-h2);
   line-height: 1;
   margin: 20px 0;
-  position: relative;
-  display: inline;
+  /* position: relative;
+  display: inline; */
 }
-.about-heading::after,
-.projects-heading::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  /* bottom: 0; */
-  left: -20px;
-  height: 10%;
-  width: 120%;
-  z-index: -1;
-  /* opacity: 0.7; */
-  /* transform: skewX(-15deg); */
-  background-color: var(--color-point);
-  /* background: rgb(180, 233, 207);
-  background: linear-gradient(
-    129deg,
-    rgba(180, 233, 207, 1) 0%,
-    rgba(134, 138, 170, 1) 35%
-  ); */
-}
-.about-content {
-  /* padding-right: 60px; */
-  font-size: var(--fz-p);
-  display: flex;
-}
-.techStack {
-  font-size: var(--fz-h2);
-  font-weight: 600;
-}
-.techStack-container {
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carousel {
-  overflow: hidden;
-  width: 100%;
-}
-.skills {
-  /* overflow: hidden; */
-  /* position: relative; */
-  display: flex;
-  flex-wrap: wrap;
-}
-.skill {
-  /* width: 100%; */
-  /* height: auto; */
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.6s;
-
-  /* position: absolute; */
-}
-.skill i {
-  font-size: 60px;
-}
-
-.carousel-btn {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  color: var(--color-point);
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 50%;
-  border: 1px solid var(--color-point);
-  cursor: pointer;
-  /* padding: 20px; */
-}
-.btn_prev {
-  left: -30px;
-}
-.btn_next {
-  right: -30px;
-}
-.aboutMe {
-  max-width: 600px;
-}
-.profile {
-  width: clamp(300px, 34vw, 500px);
+.photo {
+  width: clamp(300px, 34vw, 400px);
   max-height: 800px;
   object-fit: cover;
   padding: 20px;
   position: relative;
 }
-/* .profile::after {
-  content: "";
-  width: 500px;
-  max-height: 800;
-  background-color: #80edb9;
+.photo-deco {
   position: absolute;
-  bottom: 0;
-  left: 0;
-} */
+  top: 0;
+  width: clamp(300px, 34vw, 400px);
+  height: clamp(300px, 34vw, 400px);
+  border: 4px dashed var(--color-point);
+  border-radius: 50%;
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutMe {
+  font-family: var(--font-serif);
+  display: flex;
+  max-width: 700px;
+  margin: 50px;
+  line-height: 1.8;
+  font-size: var(--fz-p);
+}
+.techStack {
+  color: var(--color-point);
+  font-weight: 500;
+  /* width: 80%; */
+  margin: 0;
+}
+.techlist {
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  text-align: center;
+}
+.techlist li {
+  list-style: none;
+}
 
 /*----------------Main Section Projects--------------*/
 .projects-heading {
