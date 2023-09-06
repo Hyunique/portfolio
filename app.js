@@ -99,18 +99,18 @@ allSections.forEach(function (section) {
 });
 
 // Landing header animation
-let i = 0;
-function typeWriter() {
-  const header1 = document.querySelector(".header1");
-  const txt = "{ Hello there! }"; /* The text */
-  let speed = 70;
-  if (i < txt.length) {
-    header1.innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-window.addEventListener("load", typeWriter);
+// let i = 0;
+// function typeWriter() {
+//   const heroSub = document.querySelector(".hero-subtitle");
+//   const txt = "Frontend Developer"; /* The text */
+//   let speed = 170;
+//   if (i < txt.length) {
+//     heroSub.innerHTML += txt.charAt(i);
+//     i++;
+//     setTimeout(typeWriter, speed);
+//   }
+// }
+// window.addEventListener("load", typeWriter);
 
 // email copy
 const emailBtn = document.querySelector(".emailBtn");
