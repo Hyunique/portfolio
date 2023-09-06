@@ -2,7 +2,7 @@
 
 :root {
   --color-primary: #354059;
-  --color-secondary: #666a8a;
+  --color-secondary: #f5f6f9;
   --color-point: #65ebaa;
   --color-bg: white;
   --font-sans: "Manrope", sans-serif; /*300, 50, 700*/
@@ -16,6 +16,7 @@
 
 .darkmode {
   --color-primary: white;
+  --color-secondary: #666a8a;
   --color-bg: #2c354c;
 }
 body {
@@ -56,7 +57,7 @@ body {
 }
 
 #cursor2 {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   position: absolute;
   border-radius: 50%;
   width: 20px;
@@ -89,10 +90,10 @@ header {
   background-color: var(--color-bg);
   transition: color, background-color 0.3s ease-in-out;
 }
-.navContainer {
+/* .navContainer {
   display: flex;
   align-items: center;
-}
+} */
 .navList.hamburger {
   width: 100vw;
   display: flex;
@@ -104,22 +105,19 @@ header {
   background-color: var(--color-bg);
 }
 .navList {
+  width: 500px;
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 0;
 }
+
 .navItem {
-  padding: 0 20px;
   text-align: center;
-  width: 100%;
-  display: block;
   text-decoration: none;
-  color: inherit;
   font-family: var(--font-serif);
   font-size: var(--fz-p);
-  font-weight: 400;
   z-index: 11;
 }
 .dropdown-icon {
@@ -155,12 +153,17 @@ header {
   width: 100%;
 }
 .theme-btn {
+  color: var(--color-primary);
   border: none;
   background-color: var(--color-bg);
-  transition: color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .theme-btn:hover {
   color: var(--color-point);
+}
+
+.light {
+  visibility: hidden;
 }
 
 .section {
@@ -248,7 +251,7 @@ main {
   max-width: 1000px;
   height: auto;
   padding: 30px 30px 60px 30px;
-  background-color: #f5f6f9;
+  background-color: var(--color-secondary);
   border-radius: 44%;
 }
 .about-header {
@@ -383,7 +386,7 @@ main {
 }
 .pj-techstack i {
   font-size: var(--fz-h3);
-  color: var(--color-secondary);
+  color: var(--color-point);
 }
 .pj-summary {
   font-family: var(--font-serif);

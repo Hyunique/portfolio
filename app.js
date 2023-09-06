@@ -1,3 +1,4 @@
+const body = document.querySelector("body");
 // Custom cursor
 const cursor = document.querySelector("#cursor");
 const cursor2 = document.querySelector("#cursor2");
@@ -12,18 +13,30 @@ document.addEventListener("mousemove", function (e) {
 });
 
 // Theme toggle button event
-const body = document.querySelector("body");
 const themeBtn = document.querySelector(".theme-btn");
-themeBtn.addEventListener("click", () => {
+const darkmodeBtn = document.querySelector(".dark");
+const lightmodeBtn = document.querySelector(".light");
+darkmodeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("darkmode");
+  toggleThemeBtn();
+});
+lightmodeBtn.addEventListener("click", () => {
   document.body.classList.toggle("darkmode");
   toggleThemeBtn();
 });
 function toggleThemeBtn() {
-  if (themeBtn.innerHTML === "dark_mode") {
-    themeBtn.innerHTML = "flare";
+  if (!body.classList.contains("darkmode")) {
+    darkmodeBtn.style.visibility = "visible";
+    lightmodeBtn.style.visibility = "hidden";
   } else {
-    themeBtn.innerHTML = "dark_mode";
+    darkmodeBtn.style.visibility = "hidden";
+    lightmodeBtn.style.visibility = "visible";
   }
+  // if (themeBtn.innerHTML === "dark_mode") {
+  //   themeBtn.innerHTML = "flare";
+  // } else {
+  //   themeBtn.innerHTML = "dark_mode";
+  // }
 }
 
 // Auto scroll
