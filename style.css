@@ -180,6 +180,9 @@ header {
 }
 .cv-btn {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   right: 0;
   width: 80px;
   height: 40px;
@@ -188,6 +191,7 @@ header {
   font-size: var(--fz-p);
   background-color: var(--color-bg);
   color: var(--color-point);
+  text-decoration: none;
   border: 1px solid var(--color-point);
   border-radius: 40px;
   transition: all 0.3s ease-in-out;
@@ -227,29 +231,22 @@ main {
 }
 
 .arrow {
-  box-sizing: border-box;
-  height: 40px;
-  width: 40px;
-  border-style: solid;
-  transform: rotate(45deg);
-  border-color: var(--color-point);
-  border-width: 0px 2px 2px 0px;
+  height: 50px;
+  width: 50px;
   position: relative;
   left: 48%;
   top: 24%;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+  border-style: solid;
+  border-width: 0px 4px 4px 0px;
+  border-color: var(--color-point);
   transition: border-width 150ms ease-in-out;
+  animation: arrow 1.5s linear 0s infinite normal;
 }
 
 .arrow:hover {
-  border-bottom-width: 4px;
-  border-right-width: 4px;
-
-  animation-name: arrow;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
+  border-width: 0px 8px 8px 0px;
 }
 
 @keyframes arrow {
