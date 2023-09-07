@@ -14,37 +14,24 @@ document.addEventListener("mousemove", function (e) {
 
 // Theme toggle button event
 const themeBtn = document.querySelector(".theme-btn");
-const darkmodeBtn = document.querySelector(".dark");
-const lightmodeBtn = document.querySelector(".light");
-darkmodeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("darkmode");
-  toggleThemeBtn();
-});
-lightmodeBtn.addEventListener("click", () => {
+themeBtn.addEventListener("click", () => {
   document.body.classList.toggle("darkmode");
   toggleThemeBtn();
 });
 function toggleThemeBtn() {
-  if (!body.classList.contains("darkmode")) {
-    darkmodeBtn.style.visibility = "visible";
-    lightmodeBtn.style.visibility = "hidden";
+  if (themeBtn.innerHTML === "dark_mode") {
+    themeBtn.innerHTML = "flare";
   } else {
-    darkmodeBtn.style.visibility = "hidden";
-    lightmodeBtn.style.visibility = "visible";
+    themeBtn.innerHTML = "dark_mode";
   }
-  // if (themeBtn.innerHTML === "dark_mode") {
-  //   themeBtn.innerHTML = "flare";
-  // } else {
-  //   themeBtn.innerHTML = "dark_mode";
-  // }
 }
 
 // Auto scroll
 const scrollTo = document.querySelector(".arrow");
-const homeSection = document.querySelector(".landing");
-const aboutSection = document.querySelector(".about");
-const portfolioSection = document.querySelector(".projects-container");
-const contactSection = document.querySelector(".contact-container");
+const homeSection = document.querySelector(".hero");
+const aboutSection = document.querySelector(".about-section");
+const portfolioSection = document.querySelector(".projects-section");
+const contactSection = document.querySelector(".contact-section");
 
 scrollTo.addEventListener("click", () => {
   aboutSection.scrollIntoView({ behavior: "smooth" });
@@ -74,8 +61,17 @@ navList.addEventListener("click", (e) => {
 const dropIcon = document.querySelector(".dropdown-icon");
 dropIcon.addEventListener("click", showNav);
 function showNav() {
+  console.log("ham");
   navList.classList.toggle("hamburger");
 }
+
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    if (navList.classList.contains("hamburger")) {
+      navList.classList.remove("hamburger");
+    }
+  });
+});
 
 // Hiding nav bar on down scroll
 let prevScrollpos = window.pageYOffset;
@@ -111,20 +107,6 @@ allSections.forEach(function (section) {
   section.classList.add("section--hidden");
 });
 
-// Landing header animation
-// let i = 0;
-// function typeWriter() {
-//   const heroSub = document.querySelector(".hero-subtitle");
-//   const txt = "Frontend Developer"; /* The text */
-//   let speed = 170;
-//   if (i < txt.length) {
-//     heroSub.innerHTML += txt.charAt(i);
-//     i++;
-//     setTimeout(typeWriter, speed);
-//   }
-// }
-// window.addEventListener("load", typeWriter);
-
 // email copy
 const emailBtn = document.querySelector(".emailBtn");
 const tooltip = document.querySelector(".tooltiptext");
@@ -144,3 +126,38 @@ function outFunc() {
   const tooltip = document.querySelector(".tooltiptext");
   tooltip.innerHTML = "Copy email";
 }
+
+// Landing header animation
+// let i = 0;
+// function typeWriter() {
+//   const heroSub = document.querySelector(".hero-subtitle");
+//   const txt = "Frontend Developer"; /* The text */
+//   let speed = 170;
+//   if (i < txt.length) {
+//     heroSub.innerHTML += txt.charAt(i);
+//     i++;
+//     setTimeout(typeWriter, speed);
+//   }
+// }
+// window.addEventListener("load", typeWriter);
+
+// Theme toggle button event
+// const themeBtn = document.querySelector(".theme-btn");
+// const darkmodeBtn = document.querySelector(".dark");
+// const lightmodeBtn = document.querySelector(".light");
+// darkmodeBtn.addEventListener("click", () => {
+//   document.body.classList.toggle("darkmode");
+//   toggleThemeBtn();
+// });
+// lightmodeBtn.addEventListener("click", () => {
+//   document.body.classList.toggle("darkmode");
+//   toggleThemeBtn();
+// });
+// function toggleThemeBtn() {
+//   if (!body.classList.contains("darkmode")) {
+//     darkmodeBtn.style.visibility = "visible";
+//     lightmodeBtn.style.visibility = "hidden";
+//   } else {
+//     darkmodeBtn.style.visibility = "hidden";
+//     lightmodeBtn.style.visibility = "visible";
+//   }

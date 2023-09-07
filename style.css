@@ -30,6 +30,7 @@ body {
   font-weight: 400;
   transition: color, background-color 0.3s ease-in-out;
   cursor: none;
+  line-height: 1.8;
 }
 .title {
   font-family: var(--font-hand);
@@ -49,8 +50,8 @@ body {
   position: absolute;
   border: 1px solid var(--color-point);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   pointer-events: none;
   z-index: 100;
   transition: transform 0.2s ease-in-out;
@@ -79,8 +80,6 @@ body {
 /*---------------- Header --------------*/
 header {
   display: flex;
-  width: 80%;
-  /* max-width: 1440px; */
   margin: 0 auto;
   position: sticky;
   transition: top 0.3s;
@@ -103,7 +102,8 @@ header {
   align-items: center;
 }
 .navList.hamburger {
-  width: 100vw;
+  width: 100%;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,45 +122,35 @@ header {
 }
 
 .navItem {
+  width: 100px;
+  height: 30px;
+  display: flex; /*To vertically center list text*/
+  justify-content: center;
+  align-items: center;
   text-align: center;
   text-decoration: none;
   font-family: var(--font-serif);
   font-size: var(--fz-p);
+  border: 1px solid var(--color-bg);
+  border-radius: 50%;
   z-index: 11;
+  transition: all 0.2s ease-in;
 }
 .dropdown-icon {
   display: none;
   cursor: pointer;
 }
+.navItem:hover {
+  border-radius: 50%;
 
-.navItem::after {
-  content: "";
-  position: relative;
-  width: 50%;
-  height: 14px;
-  left: -10px;
-  bottom: 50%;
-  display: block;
-  transition: all 0.3s ease;
-  z-index: -1;
-}
-.navItem:hover::after {
-  width: 4px;
-  height: 14px;
-  left: -10px;
-  bottom: 50%;
-  background-color: var(--color-point);
-  z-index: -1;
+  border: 1px solid var(--color-point);
+  color: var(--color-point);
 }
 
-.theme {
-  padding: 0 10px;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
 .theme-btn {
+  position: absolute;
+  left: 0;
+  padding: 0 20px;
   color: var(--color-primary);
   border: none;
   background-color: var(--color-bg);
@@ -169,9 +159,22 @@ header {
 .theme-btn:hover {
   color: var(--color-point);
 }
-
-.light {
-  visibility: hidden;
+.cv-btn {
+  position: absolute;
+  right: 0;
+  width: 80px;
+  height: 40px;
+  margin: 0 20px;
+  font-family: var(--font-sans);
+  font-size: var(--fz-p);
+  background-color: var(--color-bg);
+  color: var(--color-point);
+  border: 1px solid var(--color-point);
+  border-radius: 40px;
+  transition: all 0.3s ease-in-out;
+}
+.cv-btn:hover {
+  background-color: var(--color-primary);
 }
 
 /*---------------- Main Section Landing --------------*/
@@ -201,7 +204,7 @@ main {
 .hero-subtitle {
   font-size: clamp(28px, 7vw, 130px);
   color: var(--color-primary);
-  margin: 40px;
+  margin: 84px 0;
 }
 
 .arrow {
@@ -259,7 +262,8 @@ main {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  padding: 80px 0;
   background-color: var(--color-secondary);
 }
 
@@ -327,6 +331,7 @@ main {
 
 /*----------------Main Section Projects--------------*/
 .projects-section {
+  width: 90vw;
   padding: 60px 0;
 }
 .project {
@@ -391,6 +396,9 @@ main {
   background-color: var(--color-bg);
   left: -10px;
 }
+.pj-info-container.col {
+  display: none;
+}
 .pj-title {
   font-family: var(--font-sans);
   font-size: var(--fz-h3);
@@ -402,6 +410,7 @@ main {
 .pj-summary {
   font-family: var(--font-serif);
   font-size: var(--fz-p);
+  line-height: 1.5;
 }
 
 .pjt-link {
@@ -423,7 +432,7 @@ main {
 }
 
 /*----------------Main Section Contact--------------*/
-.contact-container {
+.contact-section {
   display: flex;
   height: 80vh;
   width: 100vw;
@@ -459,7 +468,7 @@ main {
 }
 .social a {
   color: inherit;
-  font-size: 32px;
+  font-size: var(--fz-h2);
   padding: 6px;
   transition: color 0.3s ease-in;
   border: none;
@@ -476,7 +485,7 @@ main {
 .tooltiptext {
   visibility: hidden;
   width: 100px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-point);
   color: white;
   text-align: center;
   border-radius: 6px;
@@ -498,7 +507,7 @@ main {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent var(--color-secondary) transparent;
+  border-color: transparent transparent var(--color-point) transparent;
 }
 
 .emaildiv:hover .tooltiptext {
@@ -522,26 +531,27 @@ footer {
   font-size: 16px;
 }
 
+footer .social a {
+  font-size: var(--fz-p);
+}
+
 /*---------------------Screen break points--------------------*/
 @media (max-width: 1280px) {
   .pj-container {
     width: 90%;
   }
   .pj-info-container {
-    flex-direction: column;
+    width: 90%;
+  }
+  .pj-info-container:nth-child(odd) {
+    display: none;
+  }
+  .pj-info-container.col {
+    display: block;
   }
   .project-img {
     width: 100%;
     margin: 0;
-  }
-  .sum-container {
-    width: 100%;
-    padding: 0;
-  }
-}
-@media (max-width: 1000px) {
-  .hero-subtitle {
-    margin: 20px 0;
   }
   .pj-container {
     flex-direction: column;
@@ -550,7 +560,18 @@ footer {
     display: none;
   }
 }
+@media (max-width: 1000px) {
+  .hero-subtitle {
+    margin: 20px 0;
+  }
+}
 @media (max-width: 860px) {
+  .navList {
+    display: none;
+  }
+  .dropdown-icon {
+    display: flex;
+  }
   .about-header {
     flex-direction: column;
   }
@@ -560,9 +581,7 @@ footer {
   .aboutMe {
     width: 70%;
   }
-  .techlist {
-    width: 70%;
-  }
+
   .contact-content {
     padding: 100px;
     border-radius: 50px;
@@ -583,15 +602,24 @@ footer {
   main {
     padding: 0 20px;
   }
-  .navList {
-    display: none;
-  }
-  .dropdown-icon {
-    display: flex;
-  }
+
   .arrow {
     height: 26px;
     width: 26px;
+  }
+  .pj-info-container {
+    height: auto;
+  }
+  .techlist {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 200px;
+  }
+  .pjt-link a {
+    padding-right: 20px;
+  }
+  .project::after {
+    margin: 70px 0;
   }
   .contact-content {
     width: 300px;
