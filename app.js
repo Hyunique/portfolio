@@ -126,6 +126,15 @@ function outFunc() {
   tooltip.innerHTML = "Copy email";
 }
 
+// See more button
+const moreBtn = document.querySelector(".seemore-btn");
+const etcContainer = document.querySelector(".pj-etc-container");
+moreBtn.addEventListener("click", toggleEtcPj);
+function toggleEtcPj() {
+  etcContainer.classList.toggle("view");
+  moreBtn.textContent =
+    moreBtn.textContent === "Show less" ? "Show more" : "Show less";
+}
 // Landing header animation
 // let i = 0;
 // function typeWriter() {
