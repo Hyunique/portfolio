@@ -61,7 +61,6 @@ navList.addEventListener("click", (e) => {
 const dropIcon = document.querySelector(".dropdown-icon");
 dropIcon.addEventListener("click", showNav);
 function showNav() {
-  console.log("ham");
   navList.classList.toggle("hamburger");
 }
 
