@@ -19,7 +19,8 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-secondary);
+  background: var(--color-bg);
+  border: 1px solid var(--color-point);
 }
 ::-webkit-scrollbar-thumb {
   border: 1px solid var(--color-point);
@@ -235,7 +236,7 @@ main {
   width: 50px;
   position: relative;
   left: 48%;
-  top: 24%;
+  top: 14%;
   box-sizing: border-box;
   transform: rotate(45deg);
   border-style: solid;
@@ -251,13 +252,13 @@ main {
 
 @keyframes arrow {
   0% {
-    top: 24%;
+    top: 14%;
   }
   25% {
-    top: 28%;
+    top: 18%;
   }
   100% {
-    top: 24%;
+    top: 14%;
   }
 }
 .header2.color {
