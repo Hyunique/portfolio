@@ -2,7 +2,7 @@
 
 :root {
   --color-primary: #354059;
-  --color-secondary: #f5f6f9;
+  --color-secondary: #eef0f8;
   --color-point: #65ebaa;
   --color-bg: white;
   --font-sans: "Manrope", sans-serif; /*300, 50, 700*/
@@ -106,6 +106,7 @@ header {
   position: sticky;
   transition: top 0.3s;
   z-index: 11;
+  background-color: var(--color-bg);
 }
 .nav {
   width: 100%;
@@ -115,7 +116,6 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: var(--color-bg);
   transition: color, background-color 0.3s ease-in-out;
 }
 .navContainer {
@@ -350,6 +350,7 @@ main {
 /*----------------Main Section Projects--------------*/
 .projects-section {
   width: 90vw;
+  max-width: 1440px;
   padding: 60px 0;
 }
 .projects-header {
@@ -389,13 +390,13 @@ main {
   width: 100%;
   max-width: 700px;
   height: auto;
-  box-shadow: 16px 16px var(--color-primary);
+  box-shadow: 16px 16px var(--color-secondary);
   position: relative;
   border-radius: 12px;
   margin: 0 10px;
 }
 .project-img.even {
-  box-shadow: -16px 16px var(--color-primary);
+  box-shadow: -16px 16px var(--color-secondary);
 }
 /* .pj-deco {
   position: absolute;
@@ -417,11 +418,11 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 300px;
+  height: auto;
   width: clamp(300px, 40vw, 600px);
   padding: 0 40px;
   margin: 0 20px;
-  border: 1px solid var(--color-point);
+  border: 3px dotted var(--color-point);
   border-radius: 14px;
   background-color: var(--color-bg);
   left: -10px;
@@ -521,13 +522,13 @@ main {
 /*----------------Main Section Contact--------------*/
 .contact-section {
   display: flex;
-  height: 80vh;
+  height: 90vh;
   width: 100vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url(/img/bg.png);
-  background-size: cover;
+  background-size: contain;
 }
 .contact-heading {
   font-size: var(--fz-h1);
@@ -539,9 +540,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 200px;
+  padding: 160px;
   background-color: var(--color-bg);
-  border-radius: 100px;
+  border-radius: 80px;
 }
 .contact-content p {
   max-width: 400px;
