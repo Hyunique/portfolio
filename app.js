@@ -27,18 +27,17 @@ function toggleThemeBtn() {
 }
 
 // Auto scroll
-const scrollTo = document.querySelector(".arrow");
+const scrollArrow = document.querySelector(".arrow");
 const homeSection = document.querySelector(".hero");
 const aboutSection = document.querySelector(".about-section");
 const portfolioSection = document.querySelector(".projects-section");
 const contactSection = document.querySelector(".contact-section");
-
-scrollTo.addEventListener("click", () => {
-  aboutSection.scrollIntoView({ behavior: "smooth" });
-});
-
 const navList = document.querySelector(".navList");
 const navItems = document.querySelectorAll(".navItem");
+
+scrollArrow.addEventListener("click", () => {
+  aboutSection.scrollIntoView({ behavior: "smooth" });
+});
 navList.addEventListener("click", (e) => {
   const menuName = e.target.textContent;
   switch (menuName) {
@@ -86,42 +85,31 @@ window.onscroll = function () {
 
 // Observer section revealing
 const allSections = document.querySelectorAll(".section");
-
 function revealSection(entries, Observer) {
   const [entry] = entries;
-  // console.log(entry);
-
   if (!entry.isIntersecting) return;
   entry.target.classList.remove("section--hidden");
   Observer.unobserve(entry.target);
 }
-
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
   threshold: 0.2,
 });
-
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add("section--hidden");
 });
 
-// email copy
+// Email copy tooltip text
 const emailBtn = document.querySelector(".emailBtn");
 const tooltip = document.querySelector(".tooltiptext");
-emailBtn.addEventListener("click", myFunction);
-emailBtn.addEventListener("mouseout", outFunc);
-function myFunction() {
-  // var copyText = document.getElementById("myInput");
-  // copyText.select();
-  // copyText.setSelectionRange(0, 99999);
+emailBtn.addEventListener("click", showCopied);
+emailBtn.addEventListener("mouseout", showTooltip);
+function showCopied() {
   navigator.clipboard.writeText("kunstvanelena@gmail.com");
-
   tooltip.innerHTML = "Copied!";
-  console.log("Copied!");
 }
-
-function outFunc() {
+function showTooltip() {
   const tooltip = document.querySelector(".tooltiptext");
   tooltip.innerHTML = "Copy email";
 }
@@ -135,37 +123,3 @@ function toggleEtcPj() {
   moreBtn.textContent =
     moreBtn.textContent === "Show less" ? "Show more" : "Show less";
 }
-// Landing header animation
-// let i = 0;
-// function typeWriter() {
-//   const heroSub = document.querySelector(".hero-subtitle");
-//   const txt = "Frontend Developer"; /* The text */
-//   let speed = 170;
-//   if (i < txt.length) {
-//     heroSub.innerHTML += txt.charAt(i);
-//     i++;
-//     setTimeout(typeWriter, speed);
-//   }
-// }
-// window.addEventListener("load", typeWriter);
-
-// Theme toggle button event
-// const themeBtn = document.querySelector(".theme-btn");
-// const darkmodeBtn = document.querySelector(".dark");
-// const lightmodeBtn = document.querySelector(".light");
-// darkmodeBtn.addEventListener("click", () => {
-//   document.body.classList.toggle("darkmode");
-//   toggleThemeBtn();
-// });
-// lightmodeBtn.addEventListener("click", () => {
-//   document.body.classList.toggle("darkmode");
-//   toggleThemeBtn();
-// });
-// function toggleThemeBtn() {
-//   if (!body.classList.contains("darkmode")) {
-//     darkmodeBtn.style.visibility = "visible";
-//     lightmodeBtn.style.visibility = "hidden";
-//   } else {
-//     darkmodeBtn.style.visibility = "hidden";
-//     lightmodeBtn.style.visibility = "visible";
-//   }

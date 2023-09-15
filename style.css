@@ -2,7 +2,7 @@
 
 :root {
   --color-primary: #354059;
-  --color-secondary: #eef0f8;
+  --color-secondary: #f2f4fa;
   --color-point: #65ebaa;
   --color-bg: white;
   --font-sans: "Manrope", sans-serif; /*300, 50, 700*/
@@ -542,7 +542,7 @@ main {
   align-items: center;
   padding: 160px;
   background-color: var(--color-bg);
-  border-radius: 80px;
+  border-radius: 50%;
 }
 .contact-content p {
   max-width: 400px;
@@ -633,17 +633,22 @@ footer .social a {
     display: none;
   }
   .pj-info-container.col {
+    max-width: 700px;
     display: block;
     width: auto;
     height: auto;
   }
   .pj-info-container {
     width: auto;
-    height: auto;
+    max-width: 700px;
   }
   .project-img {
     width: 100%;
     margin: 0;
+    box-shadow: none;
+  }
+  .project-img.even {
+    box-shadow: none;
   }
   .pj-deco {
     display: none;
