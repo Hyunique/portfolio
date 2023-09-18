@@ -226,9 +226,9 @@ main {
   margin: 0;
 }
 .hero-subtitle {
-  font-size: clamp(28px, 7vw, 130px);
+  font-size: clamp(30px, 7vw, 130px);
   color: var(--color-primary);
-  margin: 84px 0;
+  /* margin: 84px 0; */
 }
 
 .arrow {
@@ -631,7 +631,7 @@ footer .social a {
 }
 @media (max-width: 1000px) {
   .hero-title {
-    margin: 20px;
+    margin: 20px 0;
   }
   .hero-subtitle {
     margin: 20px 0;
@@ -654,7 +654,7 @@ footer .social a {
     width: 70%;
   }
 
-  .pj-etc-container {
+  .pj-etc-container.view {
     display: flex;
     flex-direction: column;
   }
@@ -694,6 +694,9 @@ footer .social a {
     width: 60px;
     height: 30px;
     margin: 0 10px;
+  }
+  .hero {
+    height: 90vh;
   }
   .arrow {
     height: 26px;
