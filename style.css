@@ -221,7 +221,7 @@ main {
   line-height: clamp(16px, 3vw, 60px);
 }
 .hero-title {
-  font-size: clamp(40px, 12vw, 200px);
+  font-size: clamp(70px, 16vw, 200px);
   color: var(--color-point);
   margin: 0;
 }
@@ -630,6 +630,9 @@ footer .social a {
   }
 }
 @media (max-width: 1000px) {
+  .hero-title {
+    margin: 20px;
+  }
   .hero-subtitle {
     margin: 20px 0;
   }
