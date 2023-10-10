@@ -106,10 +106,26 @@ header {
   align-content: center;
   justify-content: center;
   margin: 0 auto;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   transition: top 0.3s;
   z-index: 11;
   background-color: var(--color-bg);
+}
+
+.theme-btn {
+  position: absolute;
+  left: 0;
+  margin: 0 20px;
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+  border: none;
+  transition: color, background-color 0.3s ease-in;
+}
+.theme-btn:hover {
+  color: var(--color-point);
 }
 .nav {
   width: 100%;
@@ -119,7 +135,7 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: color, background-color 0.3s ease-in-out;
+  transition: color, background-color 0.3s ease-in;
 }
 .navContainer {
   display: flex;
@@ -171,18 +187,6 @@ header {
   color: var(--color-point);
 }
 
-.theme-btn {
-  position: absolute;
-  left: 0;
-  padding: 0 20px;
-  color: var(--color-primary);
-  border: none;
-  background-color: var(--color-bg);
-  transition: all 0.3s ease-in-out;
-}
-.theme-btn:hover {
-  color: var(--color-point);
-}
 .cv-btn {
   position: absolute;
   display: flex;
